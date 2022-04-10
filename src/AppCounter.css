@@ -1,0 +1,7 @@
+.App__counter {
+    font-size: 1.6rem;
+    margin: 4rem 0 0.8rem 0;
+    font-weight: 600;
+    display: inline-block;
+    align-self: flex-start;
+}

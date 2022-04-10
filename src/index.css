@@ -1,13 +1,37 @@
-body {
+@import url("./variables.css");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: nunito;
+  height: 100vh;
+  background-color: var(--fourth-color);
+  color: var(--second-color);
+}
+
+header, main, footer {
+  padding: 2rem;
+}
+
+:focus-visible {
+  outline: 0.1rem var(--primary-color) solid;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.8);
 }

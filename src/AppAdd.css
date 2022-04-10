@@ -1,0 +1,31 @@
+.App__add {
+    display: flex;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+}
+
+.App__add input {
+    border: 0.1rem solid var(--third-color);
+    padding-left: 1.2rem;
+}
+
+.App__add button {
+    margin-left: 1.2rem;
+    border: none;
+    background-color: var(--third-color);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.App__add button:hover {
+    background-color: var(--primary-color);
+    color: var(--second-color);
+}
+
+.App__add input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
