@@ -1,7 +1,9 @@
 .App__add {
-    display: flex;
+    display: grid;
+    grid-template-columns: 75% 25%;
     margin-bottom: 2rem;
-    align-self: flex-start;
+    padding-bottom: 1.6rem;
+    border-bottom: 0.2rem solid var(--third-color);
 }
 
 .App__add input {
@@ -14,18 +16,41 @@
     border: none;
     background-color: var(--third-color);
     color: var(--white);
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 0;
     border-radius: 0.4rem;
     font-weight: 600;
     font-size: 1.2rem;
     cursor: pointer;
 }
 
+.App__alert {
+    color: red;
+    font-size: 1.6rem;
+    display: none;
+}
+
+.App__alert--active {
+    display: block;
+}
+
 .App__add button:hover {
-    background-color: var(--primary-color);
+    background-color: var(--fourth-color);
     color: var(--second-color);
 }
 
 .App__add input::placeholder {
     color: rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 600px) {
+    .App__add {
+        width: 100%;
+        justify-content: center;
+    }
+    .App__add button {
+        font-size: 1.6rem;
+    }
+    .App__alert {
+        font-size: 2rem;
+    }   
 }

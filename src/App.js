@@ -19,25 +19,39 @@ function App() {
 
     const addPositivePayment = (value) => {
 
-        let newPositiveListValue = [...positiveListValue, value];
-        setPositiveListValue(newPositiveListValue);
-        console.log(newPositiveListValue);
+        let alerts = document.getElementsByClassName("App__alert");
 
-        setPositiveCounterValue(newPositiveListValue.reduce((a, b) => a + b));
-        let newTotalBalance = totalBalance;
-        setTotalBalance(newTotalBalance += value);
+        if (value > 0) {
+            alerts[0].classList.remove("App__alert--active");
+            let newPositiveListValue = [...positiveListValue, value];
+            setPositiveListValue(newPositiveListValue);
+    
+            setPositiveCounterValue(newPositiveListValue.reduce((a, b) => a + b));
+            let newTotalBalance = totalBalance;
+            setTotalBalance(newTotalBalance += value);
+        } else {
+            alerts[0].classList.add("App__alert--active");
+        }
+
     }
 
     const addNegativePayment = (value) => {
+
+        let alerts = document.getElementsByClassName("App__alert");
+
+        if(value > 0) {
+            alerts[1].classList.remove("App__alert--active");
+            
+            let newNegativeListValue = [...negativeListValue, value];
+            setNegativeListValue(newNegativeListValue);
+    
+            setNegativeCounterValue(newNegativeListValue.reduce((a, b) => a + b));
+            let newTotalBalance = totalBalance;
+            setTotalBalance(newTotalBalance -= value);
+        } else {
+            alerts[1].classList.add("App__alert--active");
+        }
         
-        let newNegativeListValue = [...negativeListValue, value];
-        setNegativeListValue(newNegativeListValue);
-        console.log(newNegativeListValue);
-
-        setNegativeCounterValue(newNegativeListValue.reduce((a, b) => a + b));
-        let newTotalBalance = totalBalance;
-        setTotalBalance(newTotalBalance -= value);
-
     }
 
 
@@ -49,23 +63,25 @@ function App() {
             
             <AppCounter 
                 counterValue={positiveCounterValue}
+                type="Positive"
             />
 
-            <AppAdd onAdd={() => addPositivePayment(parseInt(document.getElementsByClassName("App__value")[0].value))} />
+            <AppAdd onAdd={() => addPositivePayment(parseFloat(document.getElementsByClassName("App__value")[0].value))} />
             
             <AppList setPositiveCounterValue={setPositiveCounterValue} >
                 {positiveListValue.map((item, index) => {
-                   return <li key={index}> {item} </li>
+                   return <li key={index}><span>{item}$</span> | Nº{index + 1} - {new Date().toLocaleDateString()}</li>
                 })}
             </AppList>
 
             <AppCounter
                 counterValue={negativeCounterValue}
+                type="Negative"
             />
-            <AppAdd onAdd={() => addNegativePayment(parseInt(document.getElementsByClassName("App__value")[1].value))} />
+            <AppAdd onAdd={() => addNegativePayment(parseFloat(document.getElementsByClassName("App__value")[1].value))} />
             <AppList>
                 {negativeListValue.map((item, index) => {
-                   return <li key={index}> {item} </li>
+                   return <li key={index}><span>{item}$</span> | Nº{index + 1} - {new Date().toLocaleDateString()}</li>
                 })}
             </AppList>
         </React.Fragment>

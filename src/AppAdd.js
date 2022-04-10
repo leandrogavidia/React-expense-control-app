@@ -4,10 +4,13 @@ import "./AppAdd.css"
 function AppAdd(props) {
 
     return(
-        <div className="App__add">
-            <input type="number" placeholder="Enter a value" className="App__value"/>
-            <button type="button" onClick={props.onAdd} >Add</button>
-        </div>
+        <React.Fragment>
+            <div className="App__add">
+                <input type="number" placeholder="Enter a value" className="App__value"/>
+                <button type="button" onClick={props.onAdd} >Add</button>
+            </div>
+            <span className="App__alert">Please, enter a valur greater than 0.</span>
+        </React.Fragment>
     );
 };
 

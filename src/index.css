@@ -13,8 +13,8 @@ html {
 body {
   font-family: nunito;
   height: 100vh;
-  background-color: var(--fourth-color);
-  color: var(--second-color);
+  background-color: var(--primary-color);
+  color: var(--fourtcolor);
 }
 
 header, main, footer {
@@ -22,7 +22,7 @@ header, main, footer {
 }
 
 :focus-visible {
-  outline: 0.1rem var(--primary-color) solid;
+  outline: 0.1rem var(--third-color) solid;
 }
 
 #root {
@@ -33,5 +33,12 @@ header, main, footer {
   position: relative;
   padding: 2rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.8);
+  width: 32rem;
+  margin: 2rem auto 0 auto;
+}
+
+@media (min-width: 600px) {
+  #root {
+    width: 60rem;
+  }
 }

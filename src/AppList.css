@@ -1,5 +1,39 @@
 .App__list {
-    align-self: flex-start;
     font-size: 1.2rem;
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 22rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 2rem 2rem 4rem 2rem;
+    margin-bottom: 4rem;
+}
+
+.App__list li {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem 0 0.8rem 1.6rem;
+    margin: 0.8rem 0;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8)
+}
+
+.App__list li span {
+    color: var(--second-color);
+}
+
+@media (min-width: 600px) {
+    .App__list {
+        width: 60rem;
+        margin-bottom: 6rem;
+    }
+    .App__list li {
+        font-size: 2rem;
+    }
 }
