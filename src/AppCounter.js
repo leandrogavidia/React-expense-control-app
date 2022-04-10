@@ -1,13 +1,12 @@
 import React from "react";
 import "./AppCounter.css";
 
-function AppCounter({counterValue, setCounterValue}) {
+function AppCounter({counterValue}) {
 
     return(
         <h2
         className="App__counter"
         value={counterValue}
-        onClick={() => setCounterValue("100")}
             >
                 Balance: {counterValue}
             </h2>

@@ -3,54 +3,69 @@ import { AppTotalBalance } from "./AppTotalBalance";
 import { AppCounter } from "./AppCounter";
 import { AppAdd } from "./AppAdd";
 import { AppList } from "./AppList";
-// import { AppElement } from "./AppElement";
+
 
 function App() {
 
-    let positivePayments = [1000];
-    let negativePayments = [250];
+    const positivePayments = [];
+    const negativePayments = [];
 
-    // let positivePayments = [200, 530];
-    // let negativePayments = [300, 100];
+    const [positiveCounterValue, setPositiveCounterValue] = React.useState(0);
+    const [negativeCounterValue, setNegativeCounterValue] = React.useState(0);
+    const [totalBalance, setTotalBalance] = React.useState(0);
 
-    // const [positivePays, setPositivePays] = React.useState(positivePayments);
-    // const [negativePays, setNegativePays] = React.useState(negativePayments);
+    const [positiveListValue, setPositiveListValue] = React.useState(positivePayments);
+    const [negativeListValue, setNegativeListValue] = React.useState(negativePayments);
 
-    // let totalNegativePayments = negativePays.reduce((a, b) => a + b);
-    // let totalPositivePayments = positivePays.reduce((a, b) => a + b)
+    const addPositivePayment = (value) => {
 
-    // let totalBalance = totalPositivePayments - totalNegativePayments;
+        let newPositiveListValue = [...positiveListValue, value];
+        setPositiveListValue(newPositiveListValue);
+        console.log(newPositiveListValue);
 
-    const [totalValue, setTotalValue] = React.useState("0");
-    const [counterValue, setCounterValue] = React.useState("0");
+        setPositiveCounterValue(newPositiveListValue.reduce((a, b) => a + b));
+        let newTotalBalance = totalBalance;
+        setTotalBalance(newTotalBalance += value);
+    }
+
+    const addNegativePayment = (value) => {
+        
+        let newNegativeListValue = [...negativeListValue, value];
+        setNegativeListValue(newNegativeListValue);
+        console.log(newNegativeListValue);
+
+        setNegativeCounterValue(newNegativeListValue.reduce((a, b) => a + b));
+        let newTotalBalance = totalBalance;
+        setTotalBalance(newTotalBalance -= value);
+
+    }
 
 
     return(
         <React.Fragment>
             <AppTotalBalance 
-                totalValue={totalValue}
-                setTotalValue={setTotalValue}
+                totalBalance={totalBalance}
             />
             
             <AppCounter 
-                counterValue={counterValue}
-                setCounterValue={setCounterValue}
+                counterValue={positiveCounterValue}
             />
-            <AppAdd />
-            <AppList >
-                {positivePayments.map(item => {
-                   return <li key={item}> {item} </li>
+
+            <AppAdd onAdd={() => addPositivePayment(parseInt(document.getElementsByClassName("App__value")[0].value))} />
+            
+            <AppList setPositiveCounterValue={setPositiveCounterValue} >
+                {positiveListValue.map((item, index) => {
+                   return <li key={index}> {item} </li>
                 })}
             </AppList>
 
             <AppCounter
-                counterValue={counterValue}
-                setCounterValue={setCounterValue}
+                counterValue={negativeCounterValue}
             />
-            <AppAdd />
+            <AppAdd onAdd={() => addNegativePayment(parseInt(document.getElementsByClassName("App__value")[1].value))} />
             <AppList>
-                {negativePayments.map(item => {
-                   return <li key={item}> {item} </li>
+                {negativeListValue.map((item, index) => {
+                   return <li key={index}> {item} </li>
                 })}
             </AppList>
         </React.Fragment>

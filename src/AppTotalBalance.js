@@ -1,15 +1,14 @@
 import React from "react";
 import "./AppTotalBalance.css";
 
-function AppTotalBalance({totalValue, setTotalValue}) {
+function AppTotalBalance({totalBalance}) {
 
     return(
         <h1 
             className="App__total-balance"
-            onClick={() => setTotalValue("100")}
-            value={totalValue}
+            value={totalBalance}
             >
-                Your total balance is: {totalValue}
+                Your total balance is: {totalBalance}
         </h1>
     );
 };

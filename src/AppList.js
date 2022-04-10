@@ -3,7 +3,7 @@ import "./AppList.css";
 
 function AppList(props) {
     return(
-        <ol className="App__list" >
+        <ol className="App__list">
             {props.children}
         </ol>
     );
