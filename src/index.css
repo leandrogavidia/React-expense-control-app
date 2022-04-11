@@ -37,8 +37,158 @@ header, main, footer {
   margin: 2rem auto 0 auto;
 }
 
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: var(--black);
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.footer address div > p {
+  font-size: 1.6rem;
+  margin: 2rem 0 2.4rem 0;
+  font-weight: bold;
+  width: 100%;
+}
+
+.footer address > p {
+  margin: 4rem 0 2rem 0;
+}
+
+.footer address div ul {
+  list-style: none;
+  font-display: flex;
+  padding: 0;
+}
+
+.footer address div ul li:nth-child(even) {
+  margin: 2rem 0;
+}
+
+.footer address div ul li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer address div ul li a:hover, .footer address div ul li a:active {
+  color: var(--second-color);
+}
+
+.footer .footer-data {
+  width: 100%;
+}
+
+.footer .footer-data__social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 600px) {
   #root {
     width: 60rem;
+  }
+  .footer {
+    font-size: 2rem;
+  }
+  .footer address div > p {
+    font-size: 2.8rem;
+    margin: 3rem 0 4rem 0;
+  }
+  .footer address > p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer .footer-data {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 4rem 0;
+  }
+  .footer .footer-data__social {
+    flex-direction: row;
+  }
+  .footer address div {
+    text-align: left;
+  }
+  .footer address div ul li:nth-child(even) {
+    margin: 0 2rem;
+  }
+  .footer address div > p {
+    margin: 0;
+    margin-bottom: 2.8rem;
+  }
+  .footer address > p {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  /* App - Grid configuration */
+
+  #root {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, auto);
+    justify-items: center;
+    align-items: start;
+    grid-gap: 2rem;
+  }
+
+  #root .App__total-balance {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+
+  #root .App__total-balance-result {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+
+  #root .App__tip {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+  }
+
+  #root .App__counter--left {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  #root .App__counter--right {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+  }
+  #root .App__add--left {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+  #root .App__add--right {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+  }
+  #root .App__alert--left {
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+  }
+  #root .App__alert--right {
+    grid-column: 3 / 4;
+    grid-row: 6 / 7;
+  }
+  #root .App__list--left {
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+    justify-self: start;
+  }
+  #root .App__list--right {
+    grid-column: 3 / 4;
+    grid-row: 7 / 8;
+    justify-self: start;
   }
 }

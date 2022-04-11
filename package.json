@@ -1,6 +1,11 @@
 {
-  "name": "react-expense-control",
+  "name": "react-app-expense-control",
   "version": "0.1.0",
+  "description": "SPA of expense control.",
+  "main": "src/index.js",
+  "keywords": ["react", "javascript", "spa", "expense-control"],
+  "author": "Leandro Gavidia Santamaria <Leandrogavidia1234@gmail.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

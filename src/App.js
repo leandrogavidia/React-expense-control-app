@@ -64,11 +64,12 @@ function App() {
             <AppCounter 
                 counterValue={positiveCounterValue}
                 type="Positive"
+                column="left"
             />
 
-            <AppAdd onAdd={() => addPositivePayment(parseFloat(document.getElementsByClassName("App__value")[0].value))} />
+            <AppAdd column="left" onAdd={() => addPositivePayment(parseFloat(document.getElementsByClassName("App__value")[0].value))} />
             
-            <AppList setPositiveCounterValue={setPositiveCounterValue} >
+            <AppList column="left" setPositiveCounterValue={setPositiveCounterValue} >
                 {positiveListValue.map((item, index) => {
                    return <li key={index}><span>{item}$</span> | Nº{index + 1} - {new Date().toLocaleDateString()}</li>
                 })}
@@ -77,9 +78,10 @@ function App() {
             <AppCounter
                 counterValue={negativeCounterValue}
                 type="Negative"
+                column="right"
             />
-            <AppAdd onAdd={() => addNegativePayment(parseFloat(document.getElementsByClassName("App__value")[1].value))} />
-            <AppList>
+            <AppAdd column="right" onAdd={() => addNegativePayment(parseFloat(document.getElementsByClassName("App__value")[1].value))} />
+            <AppList column="right" >
                 {negativeListValue.map((item, index) => {
                    return <li key={index}><span>{item}$</span> | Nº{index + 1} - {new Date().toLocaleDateString()}</li>
                 })}
