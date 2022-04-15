@@ -1,4 +1,14 @@
-@import url("./variables.css");
+@import-normalize;
+
+:root {
+  --primary-color: #FAFAFA;
+  --second-color: #E0BB20;
+  --third-color: #841818;
+  --fourth-color: #000000;
+
+  --white: #fff;
+  --black: #000;
+}
 
 * {
   padding: 0;
@@ -33,7 +43,6 @@ header, main, footer {
   position: relative;
   padding: 2rem;
   border-radius: 0.8rem;
-  width: 32rem;
   margin: 2rem auto 0 auto;
 }
 
@@ -90,10 +99,8 @@ header, main, footer {
   align-items: center;
 }
 
+
 @media (min-width: 600px) {
-  #root {
-    width: 60rem;
-  }
   .footer {
     font-size: 2rem;
   }
@@ -140,6 +147,7 @@ header, main, footer {
     justify-items: center;
     align-items: start;
     grid-gap: 2rem;
+    width: 120rem;
   }
 
   #root .App__total-balance {

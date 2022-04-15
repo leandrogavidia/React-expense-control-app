@@ -1,5 +1,5 @@
 import React from "react";
-import "./AppAdd.css"
+import "./AppAdd.css";
 
 function AppAdd(props) {
 
