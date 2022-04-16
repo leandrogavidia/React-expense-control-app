@@ -38,7 +38,9 @@
 
 @media (min-width: 600px) {
     .App__list {
-        width: 60rem;
+        height: 28rem;
+        max-height: 40rem;
+        width: 100%;
         margin-bottom: 6rem;
     }
     .App__list li {
@@ -46,11 +48,5 @@
     }
     .App__list > p {
         font-size: 1.6rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .App__list {
-        max-height: 32rem;
     }
 }

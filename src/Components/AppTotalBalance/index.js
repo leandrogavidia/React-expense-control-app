@@ -17,7 +17,11 @@ function AppTotalBalance() {
 
             <span className="App__total-balance-result">{totalBalance}$</span>
 
-            <span className="App__tip">{totalBalance < 0 && "Oh no. You are in negative numbers! 😭. Save a little more."} {totalBalance > 0 && "😀 You are in positive numbers. Do not stop!."}</span>
+            <span className="App__tip">
+                {totalBalance < 0 && "Oh no. You are in negative numbers! 😭. Save a little more."}
+                {totalBalance > 0 && "😀 You are in positive numbers. Do not stop!."}
+                {totalBalance === 0 && "Wa are in 0, let's add some payments. 💰"}
+            </span>
 
         </React.Fragment>
     );

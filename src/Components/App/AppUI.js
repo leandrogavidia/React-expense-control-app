@@ -4,7 +4,8 @@ import { AppAdd } from "../AppAdd";
 import { AppCounter } from "../AppCounter";
 import { AppList } from "../AppList";
 import { AppTotalBalance } from "../AppTotalBalance";
-import { Modal } from "../Modal";
+import { PositiveModal } from "../Modals/PositiveModal";
+import { NegativeModal } from "../Modals/NegativeModal";
 import { AppRemoveList } from "../AppRemoveList";
 
 function AppUI() {
@@ -19,9 +20,14 @@ function AppUI() {
         negativeLoading,
         negativeListValue,
         addNegativePayment,
-        openModal,
-        setOpenModal,
+        positiveOpenModal,
+        setPositiveOpenModal,
+        negativeOpenModal,
+        setNegativeOpenModal,
+        setPositiveListValue,
+        setNegativeListValue,
     } = React.useContext(AppContext);
+    
 
     return (
     <React.Fragment>
@@ -33,7 +39,7 @@ function AppUI() {
             column="left"
         />
 
-        <AppAdd column="left" setOpenModal={setOpenModal} onAdd={() => addPositivePayment(parseFloat(document.getElementsByClassName("App__value")[0].value))} />
+        <AppAdd column="left" setOpenModal={setPositiveOpenModal} onAdd={() => addPositivePayment(parseFloat(document.getElementsByClassName("App__value")[0].value))} />
         
 
         <AppList column="left" >
@@ -51,7 +57,7 @@ function AppUI() {
             type="Negative"
             column="right"
         />
-        <AppAdd column="right" setOpenModal={setOpenModal} onAdd={() => addNegativePayment(parseFloat(document.getElementsByClassName("App__value")[1].value))} />
+        <AppAdd column="right" setOpenModal={setNegativeOpenModal} onAdd={() => addNegativePayment(parseFloat(document.getElementsByClassName("App__value")[1].value))} />
         <AppList column="right" >
             {negativeError && <p>`${negativeError}`</p>}
             {(!negativeLoading && !negativeListValue.length) && <p>You do not have any negative payment. Create some</p>}
@@ -61,10 +67,16 @@ function AppUI() {
             })}
         </AppList>
 
-        {!!openModal && (
-            <Modal>
-                <AppRemoveList setOpenModal={setOpenModal} />
-            </Modal>
+        {!!positiveOpenModal && (
+            <PositiveModal>
+                <AppRemoveList setOpenModal={setPositiveOpenModal} setListValue={ setPositiveListValue } />
+            </PositiveModal>
+        )}
+
+        {!!negativeOpenModal && (
+            <NegativeModal>
+                <AppRemoveList setOpenModal={setNegativeOpenModal} setListValue={ setNegativeListValue } />
+            </NegativeModal>
         )}
 
     </React.Fragment>

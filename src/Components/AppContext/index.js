@@ -20,7 +20,8 @@ function AppProvider(props) {
         error: negativeError,
     } = useLocalStorage("NEGATIVE_APP_V1", []);
 
-    const [openModal, setOpenModal] = useState(false);
+    const [positiveOpenModal, setPositiveOpenModal] = useState(false);
+    const [negativeOpenModal, setNegativeOpenModal] = useState(false);
 
     const [positiveCounterValue, setPositiveCounterValue] = useCounterValue(positiveListValue, positiveListValue);
     const [negativeCounterValue, setNegativeCounterValue] = useCounterValue(negativeListValue, negativeListValue);
@@ -30,6 +31,7 @@ function AppProvider(props) {
     React.useEffect(() => {
         setTotalBalance(positiveCounterValue - negativeCounterValue)
     }, [positiveCounterValue, negativeCounterValue])
+    
 
     const addPositivePayment = (value) => {
 
@@ -85,8 +87,11 @@ function AppProvider(props) {
             setPositiveListValue,
             addPositivePayment,
             addNegativePayment,
-            openModal,
-            setOpenModal,
+            positiveOpenModal,
+            setPositiveOpenModal,
+            negativeOpenModal,
+            setNegativeOpenModal,
+            setNegativeListValue,
         }}>
             {props.children}
         </AppContext.Provider>
