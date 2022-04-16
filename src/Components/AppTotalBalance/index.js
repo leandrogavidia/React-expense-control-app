@@ -1,7 +1,10 @@
 import React from "react";
+import { AppContext } from "../AppContext";
 import "./AppTotalBalance.css";
 
-function AppTotalBalance({totalBalance}) {
+function AppTotalBalance() {
+
+    const {totalBalance} = React.useContext(AppContext);
 
     return(
         <React.Fragment>

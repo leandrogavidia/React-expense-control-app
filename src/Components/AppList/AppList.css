@@ -15,7 +15,7 @@
 .App__list li {
     display: inline-block;
     width: 100%;
-    padding: 0.8rem 0 0.8rem 1.6rem;
+    padding: 0.8rem 1.6rem 0.8rem 1.6rem;
     margin: 0.8rem 0;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
     border-radius: 0.4rem;
@@ -28,6 +28,14 @@
     color: var(--second-color);
 }
 
+.App__list > p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-size: bold;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.6;
+}
+
 @media (min-width: 600px) {
     .App__list {
         width: 60rem;
@@ -35,6 +43,9 @@
     }
     .App__list li {
         font-size: 2rem;
+    }
+    .App__list > p {
+        font-size: 1.6rem;
     }
 }
 

@@ -1,0 +1,45 @@
+.AppRemoveList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 1.6rem;
+    background-color: white;
+    padding: 2rem 2.8rem;
+    border-radius: 0.4rem;
+    text-align: center;
+    margin: 0 4rem;
+    box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.4);
+}
+
+.AppRemoveList_title {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.AppRemoveList_cancel {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.AppRemoveList_confirm {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.AppRemoveList button {
+    border: none;
+    border-radius: 0.4rem;
+    background-color: var(--third-color) ;
+    color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.AppRemoveList button:hover {
+    background-color: var(--fourth-color);
+    color: var(--second-color);
+}

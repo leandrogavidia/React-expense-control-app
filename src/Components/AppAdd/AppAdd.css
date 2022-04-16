@@ -1,32 +1,41 @@
 .App__add {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 1.6rem;
+    width: 100%;
+    align-items: center;
     margin-bottom: 2rem;
-    padding-bottom: 1.6rem;
+    padding-bottom: 0.8rem;
     border-bottom: 0.2rem solid var(--third-color);
 }
 
 .App__add input {
     border: 0.1rem solid var(--third-color);
     padding-left: 1.2rem;
+    height: 2.8rem;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
 }
 
 .App__add button {
-    margin-left: 1.2rem;
     border: none;
     background-color: var(--third-color);
     color: var(--white);
-    padding: 0.8rem 0;
+    padding: 0.8rem;
     border-radius: 0.4rem;
     font-weight: 600;
     font-size: 1.2rem;
     cursor: pointer;
+    height: inherit;
+    width: 100%;
 }
 
 .App__alert {
     color: red;
     font-size: 1.6rem;
     display: none;
+    text-align: center;
 }
 
 .App__alert--active {

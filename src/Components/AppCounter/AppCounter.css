@@ -4,6 +4,7 @@
     font-weight: bold;
     display: inline-block;
     color: var(--third-color);
+    text-align: center;
 }
 
 .App__counter span {
