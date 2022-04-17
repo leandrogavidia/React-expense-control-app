@@ -1,13 +1,16 @@
 import React from "react";
-import { AppProvider } from "../AppContext";
+import { AppContext, AppProvider } from "../AppContext";
 import { AppUI } from "./AppUI";
 
+
 function App() {
+
     return(
-        <AppProvider>
+        <AppProvider> 
             <AppUI />
         </AppProvider>
     );
+    
 };
 
 export { App };

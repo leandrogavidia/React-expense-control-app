@@ -35,6 +35,7 @@ function AppUI() {
     return (
 
     <React.Fragment>
+        
         <AppTotalBalance />
         
         <AppCounter 
@@ -52,7 +53,7 @@ function AppUI() {
             {(!positiveLoading && !positiveListValue.length) && <p>You do not have any positive payment. Create some</p>}
             
             {positiveListValue.map((item, index) => {
-return <li key={index}><span className="AppList_index">{index + 1}</span> <span className="AppList_pay">{item}$</span> - {new Date().toLocaleDateString()}</li>
+return <li key={index}><span className="AppList_index">{index + 1}</span> <span className="AppList_pay">{item}$</span> {new Date().toLocaleDateString()}</li>
             })}
         </AppList>
 
@@ -68,7 +69,7 @@ return <li key={index}><span className="AppList_index">{index + 1}</span> <span 
             {(!negativeLoading && !negativeListValue.length) && <p>You do not have any negative payment. Create some</p>}
 
             {negativeListValue.map((item, index) => {
-                return <li key={index}><span className="AppList_index">{index + 1}</span> <span className="AppList_pay">{item}$</span> - {new Date().toLocaleDateString()}</li>
+                return <li key={index}><span className="AppList_index">{index + 1}</span> <span className="AppList_pay">{item}$</span> {new Date().toLocaleDateString()}</li>
             })}
         </AppList>
 
