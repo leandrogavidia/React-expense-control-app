@@ -1,5 +1,5 @@
 {
-  "name": "react-app-expense-control",
+  "name": "react-expense-control-app",
   "version": "0.1.0",
   "description": "SPA of expense control.",
   "main": "src/index.js",
@@ -45,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
