@@ -8,25 +8,47 @@
     max-height: 22rem;
     overflow: scroll;
     overflow-x: hidden;
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 0 0.4rem;
     margin-bottom: 4rem;
 }
 
 .App__list li {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
     padding: 0.8rem 1.6rem 0.8rem 1.6rem;
     margin: 0.8rem 0;
-    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
     font-size: 1.6rem;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.8)
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6)
 }
 
-.App__list li span {
-    color: var(--second-color);
+
+.AppList_index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    background-color: var(--third-color);
+    margin-right: 1.6rem;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.2);
+    font-weight: bold;
 }
+
+.AppList_pay {
+    color: var(--second-color);
+    margin-right: 0.8rem;
+    font-weight: bold;
+}
+
 
 .App__list > p {
     text-align: center;

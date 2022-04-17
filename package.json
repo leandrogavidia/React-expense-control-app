@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "description": "SPA of expense control.",
   "main": "src/index.js",
-  "keywords": ["react", "javascript", "spa", "expense-control"],
+  "keywords": [
+    "react",
+    "javascript",
+    "spa",
+    "expense-control"
+  ],
   "author": "Leandro Gavidia Santamaria <Leandrogavidia1234@gmail.com>",
   "license": "MIT",
   "private": true,

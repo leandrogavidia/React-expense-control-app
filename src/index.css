@@ -14,6 +14,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--third-color) rgba(255, 255, 255, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--third-color);
+  border-radius: 2rem;
+  border: none;
 }
 
 html {
@@ -24,7 +41,7 @@ body {
   font-family: Rubik;
   height: 100vh;
   background-color: var(--primary-color);
-  color: var(--fourtcolor);
+  color: var(--fourth-color);
 }
 
 header, main, footer {
@@ -71,7 +88,7 @@ header, main, footer {
 
 .footer address div ul {
   list-style: none;
-  font-display: flex;
+  display: flex;
   padding: 0;
 }
 

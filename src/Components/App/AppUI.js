@@ -7,6 +7,8 @@ import { AppTotalBalance } from "../AppTotalBalance";
 import { PositiveModal } from "../Modals/PositiveModal";
 import { NegativeModal } from "../Modals/NegativeModal";
 import { AppRemoveList } from "../AppRemoveList";
+import { AppLoading } from "../AppLoading";
+ 
 
 function AppUI() {
     const {
@@ -26,10 +28,12 @@ function AppUI() {
         setNegativeOpenModal,
         setPositiveListValue,
         setNegativeListValue,
+
     } = React.useContext(AppContext);
     
 
     return (
+
     <React.Fragment>
         <AppTotalBalance />
         
@@ -43,12 +47,12 @@ function AppUI() {
         
 
         <AppList column="left" >
-            {positiveError && <p>`${positiveError}`</p>}
-            {positiveLoading && <p>Loading your payments...</p>}
+            {positiveError && <p>We have a error: `${positiveError} - Try to reload the page.`</p>}
+            {positiveLoading && <AppLoading />}
             {(!positiveLoading && !positiveListValue.length) && <p>You do not have any positive payment. Create some</p>}
             
             {positiveListValue.map((item, index) => {
-                return <li key={index}><span>{item}$</span> | Nº{index + 1} - {new Date().toLocaleDateString()}</li>
+return <li key={index}><span className="AppList_index">{index + 1}</span> <span className="AppList_pay">{item}$</span> - {new Date().toLocaleDateString()}</li>
             })}
         </AppList>
 
@@ -59,11 +63,12 @@ function AppUI() {
         />
         <AppAdd column="right" setOpenModal={setNegativeOpenModal} onAdd={() => addNegativePayment(parseFloat(document.getElementsByClassName("App__value")[1].value))} />
         <AppList column="right" >
-            {negativeError && <p>`${negativeError}`</p>}
+            {negativeError && <p>We have a error: `${positiveError} - Try to reload the page.`</p>}
+            {positiveLoading && <AppLoading />}
             {(!negativeLoading && !negativeListValue.length) && <p>You do not have any negative payment. Create some</p>}
 
             {negativeListValue.map((item, index) => {
-               return <li key={index}><span>{item}$</span> | Nº{index + 1} - {new Date().toLocaleDateString()}</li>
+                return <li key={index}><span className="AppList_index">{index + 1}</span> <span className="AppList_pay">{item}$</span> - {new Date().toLocaleDateString()}</li>
             })}
         </AppList>
 

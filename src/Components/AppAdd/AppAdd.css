@@ -18,6 +18,13 @@
     grid-row: 1 / 2;
 }
 
+.App__add input::-webkit-inner-spin-button, .App__add input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.App__add input { -moz-appearance:textfield; }
+
 .App__add button {
     border: none;
     background-color: var(--third-color);

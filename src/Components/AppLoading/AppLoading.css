@@ -1,0 +1,29 @@
+.AppLoading-item {
+    width: 100%;
+    height: 12rem;
+    border-radius: 0.4rem;
+    background: linear-gradient(90deg, white, rgba(190, 190, 190));
+    background-size: 400% 400%;
+    animation: loadingAnimation 6s ease-in-out infinite;
+    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.AppLoading-item-M1 {
+    margin-top: 2rem;
+}
+
+.AppLoading-item-M2 {
+    margin: 2rem 0; 
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
