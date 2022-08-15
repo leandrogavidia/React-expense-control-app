@@ -9,7 +9,7 @@ function AppAdd(props) {
 
     return(
         <React.Fragment>
-            <div className={`App__add App__add--${props.column}`}>
+            <div className={`App__add App__add--${props.column}`} >
                 <input type="number" placeholder="Enter a value" className="App__value"/>
                 <button onClick={props.onAdd} >ADD</button>
                 <button onClick={onPositiveModal}>DELETE LIST</button>
